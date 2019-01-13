@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bpmColor">#ff0000</color>
+
+    <!-- TODO replace with vuzix theme -->
+    <color name="hud_green">#00FF7D</color>
+
+
 </resources>
