@@ -15,8 +15,6 @@
     android:background="@color/hud_transparent"
     >
 
-
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -50,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/hud_green"
             android:text="@string/min" />
 
         <TextView
@@ -58,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/hud_green"
             android:text="@string/avg" />
 
         <TextView
@@ -66,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/hud_green"
             android:text="@string/max" />
     </LinearLayout>
 
