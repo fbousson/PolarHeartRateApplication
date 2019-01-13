@@ -10,12 +10,11 @@ import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.SimpleXYSeries;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.analytics.FirebaseAnalytics;
+
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -46,7 +45,6 @@ import android.widget.Toast;
  */
 public class MainActivity extends Activity implements OnItemSelectedListener, Observer {
 
-    private FirebaseAnalytics mFirebaseAnalytics;
     private int MAX_SIZE = 60; //graph max size
     boolean searchBt = true;
     BluetoothAdapter mBluetoothAdapter;
@@ -68,15 +66,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ob
         setContentView(R.layout.activity_main);
         Log.i("Main Activity", "Starting Polar HR monitor main activity");
         DataHandler.getInstance().addObserver(this);
-        AdView mAdView = (AdView) findViewById(R.id.adView);
 
-        // Create an ad request. Check logcat output for the hashed device ID to
-        // get test ads on a physical device. e.g.
-        // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        // Start loading the ad in the background.
-        mAdView.loadAd(adRequest);
 
         //Verify if device is to old for BTLE
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -139,14 +129,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ob
         plot.setTicksPerRangeLabel(3);
         plot.getGraphWidget().setDomainLabelOrientation(-45);
 
-        //ANALYTIC
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.VALUE, "Main");
-        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-        //t = GoogleAnalytics.getInstance(this).newTracker("UA-51478243-1");
-        //#t.setScreenName("Polar main page");
-        //#t.send(new HitBuilders.AppViewBuilder().build());
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
