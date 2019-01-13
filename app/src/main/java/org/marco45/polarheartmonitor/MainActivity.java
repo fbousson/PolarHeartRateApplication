@@ -39,7 +39,7 @@ import android.widget.Toast;
  *
  * @author Marco
  */
-public class MainActivity extends Activity implements OnItemSelectedListener, Observer {
+public class MainActivity extends HeartRateActivity implements OnItemSelectedListener, Observer {
 
     private int MAX_SIZE = 60; //graph max size
     boolean searchBt = true;

@@ -3,6 +3,7 @@ package org.marco45.polarheartmonitor;
 import java.io.IOException;
 import java.util.UUID;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -17,9 +18,9 @@ public class ConnectThread extends Thread {
 	
 	BluetoothAdapter mBluetoothAdapter;
 	private final BluetoothSocket mmSocket;
-	MainActivity ac;
+	HeartRateActivity ac;
 	
-	public ConnectThread(BluetoothDevice device, MainActivity ac) {
+	public ConnectThread(BluetoothDevice device, HeartRateActivity ac) {
 		// Use a temporary object that is later assigned to mmSocket,
 		// because mmSocket is final
 		Log.i("ConnectThread", "Starting connectThread");
