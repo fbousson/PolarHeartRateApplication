@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -56,6 +57,9 @@ public class VuzixMainActivity extends HeartRateActivity implements OnItemSelect
         setContentView(R.layout.activity_vuzix_main);
         Log.i("Main Activity", "Starting Polar HR monitor main activity");
         DataHandler.getInstance().addObserver(this);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
 
 
         //Verify if device is to old for BTLE
